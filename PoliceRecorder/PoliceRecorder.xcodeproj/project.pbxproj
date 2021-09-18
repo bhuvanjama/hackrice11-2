@@ -50,6 +50,9 @@
 		D02EC39E26F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC39D26F5BB3C000C4670 /* SpeechRecognitionView.swift */; };
 		D02EC39F26F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC39D26F5BB3C000C4670 /* SpeechRecognitionView.swift */; };
 		D02EC3A026F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC39D26F5BB3C000C4670 /* SpeechRecognitionView.swift */; };
+		D02EC3EB26F68AA6000C4670 /* DemoCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3EA26F68AA6000C4670 /* DemoCustom.swift */; };
+		D02EC3EC26F68AA6000C4670 /* DemoCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3EA26F68AA6000C4670 /* DemoCustom.swift */; };
+		D02EC3ED26F68AA6000C4670 /* DemoCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3EA26F68AA6000C4670 /* DemoCustom.swift */; };
 		E751304DADD61F0A533CC586 /* Pods_PoliceRecorder_PoliceRecorderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0A3FC56036B5A45FFB11C1 /* Pods_PoliceRecorder_PoliceRecorderUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +108,7 @@
 		B2F01475998119829C9C724D /* Pods-PoliceRecorder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoliceRecorder.release.xcconfig"; path = "Target Support Files/Pods-PoliceRecorder/Pods-PoliceRecorder.release.xcconfig"; sourceTree = "<group>"; };
 		D02EC2DE26F58299000C4670 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D02EC39D26F5BB3C000C4670 /* SpeechRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionView.swift; sourceTree = "<group>"; };
+		D02EC3EA26F68AA6000C4670 /* DemoCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCustom.swift; sourceTree = "<group>"; };
 		E05371333FB36B2BD4CB7A52 /* Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig"; path = "Target Support Files/Pods-PoliceRecorder-PoliceRecorderUITests/Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +191,7 @@
 				5661546526F57B4100C559DD /* RegistrationBackend.swift */,
 				D02EC2DE26F58299000C4670 /* HomeView.swift */,
 				D02EC39D26F5BB3C000C4670 /* SpeechRecognitionView.swift */,
+				D02EC3EA26F68AA6000C4670 /* DemoCustom.swift */,
 				56789E5626F4726700B9A35D /* TodoFirebaseApp.swift */,
 				56789E2426F46FEC00B9A35D /* ContentView.swift */,
 				56789E2626F46FF000B9A35D /* Assets.xcassets */,
@@ -486,6 +491,7 @@
 				56789E5B26F47B2200B9A35D /* LoginView.swift in Sources */,
 				56789E5726F4726700B9A35D /* TodoFirebaseApp.swift in Sources */,
 				56789E2C26F46FF000B9A35D /* Persistence.swift in Sources */,
+				D02EC3EB26F68AA6000C4670 /* DemoCustom.swift in Sources */,
 				5661546C26F583B200C559DD /* AudioRecorder.swift in Sources */,
 				56789E2F26F46FF000B9A35D /* PoliceRecorder.xcdatamodeld in Sources */,
 				5661547426F5B40E00C559DD /* EmergencyContactsView.swift in Sources */,
@@ -511,6 +517,7 @@
 				D02EC2E026F58299000C4670 /* HomeView.swift in Sources */,
 				D02EC39F26F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */,
 				56789E3A26F46FF000B9A35D /* PoliceRecorderTests.swift in Sources */,
+				D02EC3EC26F68AA6000C4670 /* DemoCustom.swift in Sources */,
 				5661547526F5B40E00C559DD /* EmergencyContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +535,7 @@
 				D02EC2E126F58299000C4670 /* HomeView.swift in Sources */,
 				D02EC3A026F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */,
 				56789E4526F46FF000B9A35D /* PoliceRecorderUITests.swift in Sources */,
+				D02EC3ED26F68AA6000C4670 /* DemoCustom.swift in Sources */,
 				5661547626F5B40E00C559DD /* EmergencyContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

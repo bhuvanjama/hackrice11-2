@@ -4,11 +4,11 @@
 //
 //  Created by Pranav on 9/17/21.
 //
-
+ 
 import SwiftUI
 import CoreData
 import AVKit
-
+ 
 struct HomeView: View {
     
     @State var record = false
@@ -25,9 +25,20 @@ struct HomeView: View {
             
             VStack {
                 
-                List(self.audios, id: \.self) { i in
+                /*List(self.audios, id: \.self) { i in
                     
                     Text(i.relativeString)
+                }*/
+                
+                List{
+                    ForEach(self.audios.indices, id: \.self){ i in
+                        Button(action: {
+                            //open mp4 file
+                        }, label: {
+                            Text(self.audios[i].relativeString)
+                        })
+                    }
+                    .onDelete(perform: self.deleteAudios)
                 }
                 
                 Button(action: {
@@ -140,4 +151,10 @@ struct HomeView: View {
             print("Error occurred: " + error.localizedDescription)
         }
     }
+    
+    func deleteAudios(with indexSet: IndexSet) {
+        indexSet.forEach({index in
+            //delete from firebase
+        })
+        }
 }
