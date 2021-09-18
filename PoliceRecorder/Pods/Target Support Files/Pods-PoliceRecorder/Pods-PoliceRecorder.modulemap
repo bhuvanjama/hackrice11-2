@@ -1,0 +1,6 @@
+framework module Pods_PoliceRecorder {
+  umbrella header "Pods-PoliceRecorder-umbrella.h"
+
+  export *
+  module * { export * }
+}
