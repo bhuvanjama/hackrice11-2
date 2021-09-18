@@ -11,6 +11,18 @@ import Firebase
 struct RegistrationBackend {
     
     let db = Firestore.firestore()
+    let ref = Database.database().reference()
+    
+    func createUser(name: String, email: String, phoneNumber: String, uuID: String){
+        
+        let number = (phoneNumber as NSString).doubleValue
+        let userArray: [String: Any]
+        userArray = ["name": name, "phoneNumber": number, "email": email, "UUID": uuID]
+        
+        ref.child("Users").child(name)
+            .setValue(userArray)
+        
+    }
     
     func registerUser(name: String, phNumber: String, email: String, password: String, confirmPassword: String) {
         

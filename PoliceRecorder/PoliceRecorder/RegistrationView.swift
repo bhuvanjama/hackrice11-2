@@ -110,6 +110,8 @@ struct RegistrationView: View {
                                     alert.addAction(action)
                                 }
                                 
+                                let backend: RegistrationBackend = RegistrationBackend()
+                                backend.createUser(name: username, email: email, phoneNumber: phoneNumber, uuID: UIDevice.current.identifierForVendor?.uuidString ?? "No UUID")
                                 
                             }
                             
