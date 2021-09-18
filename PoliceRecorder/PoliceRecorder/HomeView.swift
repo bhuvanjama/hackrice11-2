@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 import AVKit
+import SwiftSpeech
  
 struct HomeView: View {
     
@@ -23,6 +24,8 @@ struct HomeView: View {
         
         NavigationView {
             
+            VStack{
+                
             VStack {
                 
                 /*List(self.audios, id: \.self) { i in
@@ -42,14 +45,14 @@ struct HomeView: View {
                 }
                 
                 Button(action: {
-                    
+
                     do {
                         
                         if self.record {
                             
                             //recording already in progress
                             
-                            self.recorder.stop()
+                            self.recorder?.stop()
                             self.record.toggle()
                             //updating data for each rcd
                             self.getAudios()
@@ -98,7 +101,19 @@ struct HomeView: View {
                 .padding(.vertical, 25)
             }
             .navigationBarTitle("Record Audio")
+        
+            SwiftSpeech.Demos.Basic.BasicCustom(localeIdentifier: "en_US")
+            
+        }//VStack
+            
+            
         }
+        
+        
+        
+        
+        
+        
         .alert(isPresented: self.$alert, content: { () -> Alert in
             Alert(title: Text("Error"), message: Text("Please enable microphone access."))
         })
