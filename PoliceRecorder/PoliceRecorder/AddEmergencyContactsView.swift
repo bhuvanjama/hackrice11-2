@@ -52,7 +52,7 @@ struct AddEmergencyContactsView: View {
                     
                     let contactInfo = ["name": emergencyContact, "phoneNumber": phoneNumber] as [String : Any]
                     
-                    db.child("Emergency-Contacts").child("hello-gmail-com").setValue(contactInfo)
+                    db.child("Emergency-Contacts").child("hello-gmail-com").child(emergencyContact).setValue(contactInfo)
                     
                     let alert = UIAlertController(title: "Contact Added", message: "Your emergency contact has successfully been added.", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Great!", style: .default, handler: nil)

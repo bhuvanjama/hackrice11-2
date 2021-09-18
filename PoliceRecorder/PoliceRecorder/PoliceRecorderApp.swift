@@ -36,6 +36,14 @@ struct PoliceRecorderApp: App {
                     .tabItem {
                         Label("Login", systemImage: "square.and.pencil")
                     }
+                EmergencyContactsView()
+                    .tabItem {
+                        Label("ECV", systemImage: "square.and.pencil")
+                    }
+                AddEmergencyContactsView()
+                    .tabItem {
+                        Label("Add", systemImage: "square.and.pencil")
+                    }
             }
             
         }

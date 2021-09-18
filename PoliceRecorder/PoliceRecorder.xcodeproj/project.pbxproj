@@ -18,6 +18,9 @@
 		5661548026F5D25600C559DD /* AddEmergencyContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661547F26F5D25600C559DD /* AddEmergencyContactsView.swift */; };
 		5661548126F5D25600C559DD /* AddEmergencyContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661547F26F5D25600C559DD /* AddEmergencyContactsView.swift */; };
 		5661548226F5D25600C559DD /* AddEmergencyContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661547F26F5D25600C559DD /* AddEmergencyContactsView.swift */; };
+		5661549026F6AB5F00C559DD /* ListofContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661548F26F6AB5F00C559DD /* ListofContacts.swift */; };
+		5661549126F6AB5F00C559DD /* ListofContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661548F26F6AB5F00C559DD /* ListofContacts.swift */; };
+		5661549226F6AB5F00C559DD /* ListofContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661548F26F6AB5F00C559DD /* ListofContacts.swift */; };
 		56789E2326F46FEC00B9A35D /* PoliceRecorderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56789E2226F46FEC00B9A35D /* PoliceRecorderApp.swift */; };
 		56789E2526F46FEC00B9A35D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56789E2426F46FEC00B9A35D /* ContentView.swift */; };
 		56789E2726F46FF000B9A35D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56789E2626F46FF000B9A35D /* Assets.xcassets */; };
@@ -85,6 +88,7 @@
 		5661546B26F583B200C559DD /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		5661547326F5B40E00C559DD /* EmergencyContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactsView.swift; sourceTree = "<group>"; };
 		5661547F26F5D25600C559DD /* AddEmergencyContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactsView.swift; sourceTree = "<group>"; };
+		5661548F26F6AB5F00C559DD /* ListofContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListofContacts.swift; sourceTree = "<group>"; };
 		56789E1F26F46FEC00B9A35D /* PoliceRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoliceRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56789E2226F46FEC00B9A35D /* PoliceRecorderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceRecorderApp.swift; sourceTree = "<group>"; };
 		56789E2426F46FEC00B9A35D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				5661547F26F5D25600C559DD /* AddEmergencyContactsView.swift */,
 				56789E5A26F47B2200B9A35D /* LoginView.swift */,
 				5661547326F5B40E00C559DD /* EmergencyContactsView.swift */,
+				5661548F26F6AB5F00C559DD /* ListofContacts.swift */,
 				6F2E168726F5A481004D9647 /* RegistrationView.swift */,
 				56789E5E26F47BA400B9A35D /* AuthBackend.swift */,
 				5661546B26F583B200C559DD /* AudioRecorder.swift */,
@@ -499,6 +504,7 @@
 				6F2E168826F5A481004D9647 /* RegistrationView.swift in Sources */,
 				D02EC3FB26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
 				D02EC2DF26F58299000C4670 /* HomeView.swift in Sources */,
+				5661549026F6AB5F00C559DD /* ListofContacts.swift in Sources */,
 				56789E5B26F47B2200B9A35D /* LoginView.swift in Sources */,
 				56789E5726F4726700B9A35D /* TodoFirebaseApp.swift in Sources */,
 				56789E2C26F46FF000B9A35D /* Persistence.swift in Sources */,
@@ -527,6 +533,7 @@
 				D02EC3FC26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
 				D02EC3F426F68F63000C4670 /* ViewModifiersCustom.swift in Sources */,
 				6F2E168926F5A481004D9647 /* RegistrationView.swift in Sources */,
+				5661549126F6AB5F00C559DD /* ListofContacts.swift in Sources */,
 				56789E6026F47BA400B9A35D /* AuthBackend.swift in Sources */,
 				D02EC2E026F58299000C4670 /* HomeView.swift in Sources */,
 				D02EC39F26F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */,
@@ -547,6 +554,7 @@
 				D02EC3FD26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
 				D02EC3F526F68F63000C4670 /* ViewModifiersCustom.swift in Sources */,
 				6F2E168A26F5A481004D9647 /* RegistrationView.swift in Sources */,
+				5661549226F6AB5F00C559DD /* ListofContacts.swift in Sources */,
 				56789E6126F47BA400B9A35D /* AuthBackend.swift in Sources */,
 				D02EC2E126F58299000C4670 /* HomeView.swift in Sources */,
 				D02EC3A026F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */,
