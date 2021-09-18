@@ -35,14 +35,12 @@ public extension SwiftSpeech.Demos.Basic{
                 VStack(spacing: 35.0) {
                     Text(text)
                         .font(.system(size: 20, weight: .thin, design: .default))
-                    SwiftSpeech.RecordButton()
+                    SwiftSpeech.RecordButton.RecordButtonCustom()
                         .swiftSpeechToggleRecordingOnTap(sessionConfiguration: sessionConfiguration, animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
                         .onRecognizeLatest(update: $text)
                     
-                    if text.lowercased().range(of: "record") != nil{
+                    if text.lowercased().range(of: "record audio") != nil{
                         HomeView(record: true)
-                       // NavigationLink(destination: HomeView(record: true)){
-                        //}.foregroundColor(.white)
                     }
                     
                 }.onAppear {
