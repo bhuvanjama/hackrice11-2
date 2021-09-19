@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>DATABASE_URL</key>
-	<string>gs://policesafety-70263.appspot.com</string>
+	<string>https://policesafety-70263-default-rtdb.firebaseio.com/</string>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:608033382672:ios:9e3285e37dc0f312074595</string>
 </dict>

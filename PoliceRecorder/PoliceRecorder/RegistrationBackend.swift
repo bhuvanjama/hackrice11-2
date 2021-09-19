@@ -46,9 +46,6 @@ struct RegistrationBackend {
                             print("Error occurred: " + error!.localizedDescription)
                         } else {
                             
-                            let alert = UIAlertController(title: "Success!", message: "We successfully registered you on our database.", preferredStyle: .alert)
-                            let action = UIAlertAction(title: "Great!", style: .default, handler: nil)
-                            alert.addAction(action)
                             
                             //just a cool touch I wanted to try :D
                             

@@ -21,6 +21,8 @@ struct HomeView: View {
     // fetch audio
     @State var audios: [URL] = []
     
+    var storageAudios: [Any] = []
+    
     let email = Auth.auth().currentUser?.email?.replacingOccurrences(of: ".", with: "-").replacingOccurrences(of: "@", with: "-")
 
     

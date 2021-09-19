@@ -34,6 +34,22 @@ struct EmergencyContactsView: View {
                                 Text(item).fontWeight(.semibold)
                                     .lineLimit(2)
                                     .minimumScaleFactor(0.5)
+                            }.onTapGesture {
+                                
+                                
+                                db.child("Emergency-Contacts").child(email!).child(item).observeSingleEvent(of: .value, with: { (snapshot) in
+                                    
+                                    let value = snapshot.value as? NSDictionary
+                                    
+                                    if let phoneNumber = value?["phoneNumber"] {
+                                        if let url = URL(string: "tel://\(phoneNumber)") {
+                                            UIApplication.shared.open(url)
+                                        }
+                                    }
+                                    
+                                })
+                                
+                                
                             }
                         }
                     }.onAppear {
