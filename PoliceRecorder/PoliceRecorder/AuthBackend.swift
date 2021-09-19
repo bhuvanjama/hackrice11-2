@@ -8,6 +8,8 @@
 import Foundation
 import Firebase
 
+var userEmail: String = ""
+
 struct AuthBackend {
     
     func loginAuth(username: String, password: String) {
@@ -18,6 +20,9 @@ struct AuthBackend {
                 print(error!.localizedDescription)
             } else {
                 print("User is logged in.")
+                print((Auth.auth().currentUser?.email))
+                print(username)
+                userEmail = username.replacingOccurrences(of: ".", with: "-").replacingOccurrences(of: "@", with: "-")
             }
         })
     }

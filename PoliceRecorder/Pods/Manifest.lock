@@ -362,6 +362,7 @@ PODS:
   - PromisesObjC (1.2.9)
   - Protobuf (3.17.0)
   - SwiftSpeech (0.9.3)
+  - SwiftyCam (4.0.0)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -371,6 +372,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Storage
   - SwiftSpeech
+  - SwiftyCam
 
 SPEC REPOS:
   trunk:
@@ -399,6 +401,7 @@ SPEC REPOS:
     - PromisesObjC
     - Protobuf
     - SwiftSpeech
+    - SwiftyCam
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -426,7 +429,8 @@ SPEC CHECKSUMS:
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Protobuf: 7327d4444215b5f18e560a97f879ff5503c4581c
   SwiftSpeech: f49b1dc8d841295ed3fd2e91233a607f45bfa529
+  SwiftyCam: 6e57914771d972fbe508e759dc9d0150a44a93fd
 
-PODFILE CHECKSUM: 63e67612a61ffa94ec891fa3103531130a8befdf
+PODFILE CHECKSUM: 8a6298b645fcc89a89a2359e5faacf6f2ab651f0
 
 COCOAPODS: 1.9.3

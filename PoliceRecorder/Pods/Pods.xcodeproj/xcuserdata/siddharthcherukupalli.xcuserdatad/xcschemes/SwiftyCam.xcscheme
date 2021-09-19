@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "736AF68F6527ACF6B4A4C54728824A1C"
-               BuildableName = "FirebaseDatabase.framework"
-               BlueprintName = "FirebaseDatabase"
+               BlueprintIdentifier = "64D8AA920E37251A430220E5E4088BDA"
+               BuildableName = "SwiftyCam.framework"
+               BlueprintName = "SwiftyCam"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

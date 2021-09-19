@@ -92,7 +92,7 @@ struct HomeView: View {
                             let metadata = StorageMetadata()
                             metadata.contentType = "audio/m4a"
                                                         
-                            let vidRef = storage.child("recordings").child(email ?? "hello-gmail-com").child("myPoliceRcd-\(self.audios.count + 1).m4a")
+                            let vidRef = storage.child("recordings").child(email!).child("myPoliceRcd_\(self.audios.count + 1).m4a")
                             do {
                                 let audioData = try Data(contentsOf: recorder.url)
                                 vidRef.putData(audioData, metadata: metadata) { (data, error) in
@@ -200,6 +200,26 @@ struct HomeView: View {
     func deleteAudios(with indexSet: IndexSet) {
         indexSet.forEach({index in
             //delete from firebase
+            
+            print(audios[index])
+            
+//            let str = (audios[index].absoluteString).range(of: "m4a")
+//            string.removeSubrange(str!.upperBound..<string.endIndex)
+            
+            var string = audios[index].absoluteString
+            print("file: " + string)
+            let endOfName = string.firstIndex(of: "-")!
+            let file = string[...(endOfName)]
+            print("string: " + file)
+                        
+            let index = string.index(after: string.lastIndex(of: "/")!)..<string.endIndex
+            print(index)
+
+            
+            
+            
+//            let fileRef = storage.child("recordings/").child(email!).child(audios[index])
+            
         })
     }
 }
