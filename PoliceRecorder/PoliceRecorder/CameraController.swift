@@ -49,6 +49,28 @@ class CameraController: NSObject{
         }
         func configureDeviceInputs() throws {
             //3
+            let captureSession = self.captureSession
+         
+            //4
+            if let rearCamera = self.rearCamera {
+                self.rearCameraInput = try AVCaptureDeviceInput(device: rearCamera)
+         
+                if captureSession!.canAddInput(self.rearCameraInput!) { captureSession!.addInput(self.rearCameraInput!) }
+         
+                self.currentCameraPosition = .rear
+            }
+         
+            else if let frontCamera = self.frontCamera {
+                self.frontCameraInput = try AVCaptureDeviceInput(device: frontCamera)
+         
+                if captureSession!.canAddInput(self.frontCameraInput!) { captureSession!.addInput(self.frontCameraInput!) }
+                else { throw CameraControllerError.inputsAreInvalid }
+         
+                self.currentCameraPosition = .front
+            }
+         
+            else { throw CameraControllerError.noCamerasAvailable }
+            /*//3
             guard let captureSession = self.captureSession else { throw CameraControllerError.captureSessionIsMissing }
          
             //4
@@ -69,7 +91,7 @@ class CameraController: NSObject{
                 self.currentCameraPosition = .front
             }
          
-            else { throw CameraControllerError.noCamerasAvailable }
+            else { throw CameraControllerError.noCamerasAvailable }*/
         }
         
         DispatchQueue(label: "prepare").async {
@@ -101,6 +123,14 @@ class CameraController: NSObject{
         
         view.layer.insertSublayer(self.previewLayer!, at: 0)
         self.previewLayer?.frame = view.frame
+        /*guard let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
+        
+        self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.previewLayer?.connection?.videoOrientation = .portrait
+        
+        view.layer.insertSublayer(self.previewLayer!, at: 0)
+        self.previewLayer?.frame = view.frame*/
     }
     
     func switchCameras() throws {

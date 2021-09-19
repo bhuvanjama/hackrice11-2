@@ -30,17 +30,51 @@ struct HomeView: View {
     
     func startRecording() {
         do {
-            
-            if self.record {
-                Circle().stroke(Color.white, lineWidth: 6).frame(width: 85, height: 85)
-            } else{
-                Circle().frame(width: 85, height: 85)
-            }
+                               
+               if self.record {
+                   
+                   //recording already in progress
+                   
+                   //self.recorder.stop()
+                   self.record.toggle()
+                   //updating data for each rcd
+                   self.getAudios()
+                   return
+               }
+           
+               
+           let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+               
+           let date = Date()
+           
+           let dateFormatter = DateFormatter()
+               dateFormatter.dateFormat = "MM/dd/yyyy"
+           
+               let fileName = url.appendingPathComponent("myPoliceRcd-\(self.audios.count + 1).m4a")
+           
+           let settings = [
+               
+               AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+               AVSampleRateKey: 12000,
+               AVNumberOfChannelsKey: 1,
+               AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+               
+           ]
+           
+           self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
+           
+               self.recorder.record()
+               self.record.toggle()
+               
+       } catch {
+           print("Error occurred: " + error.localizedDescription)
+       }
+       /* do {
             
             if self.record {
                 
                 //recording already in progress
-//                self.recorder?.stop()
+                self.recorder?.stop()
                 self.record.toggle()
                 //updating data for each rcd
                 self.getAudios()
@@ -100,7 +134,7 @@ struct HomeView: View {
             
         } catch {
             print("Error occurred: " + error.localizedDescription)
-        }
+        }*/
     }
     
     var body: some View {
@@ -135,10 +169,9 @@ struct HomeView: View {
                         
                         ZStack {
                             Circle().fill(Color.blue).frame(width: 70, height: 70)
-                            
-                            
+                                                    
                             if self.record {
-                                Circle().fill(Color.blue).frame(width: 70, height: 70)
+                                Circle().stroke(Color.black, lineWidth: 6).frame(width: 85, height: 85)
                             }
                             
                         }

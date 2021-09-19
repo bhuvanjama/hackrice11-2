@@ -16,8 +16,9 @@ public extension SwiftSpeech.Demos.Basic{
         
         var sessionConfiguration: SwiftSpeech.Session.Configuration
         
-        @State var text = "Tap to Speak"
+        @State var text = ""
         @State var recording: HomeView = HomeView(record: true)
+        @State var msg: TextContacts = TextContacts()
 
         
         public init(sessionConfiguration: SwiftSpeech.Session.Configuration) {
@@ -44,21 +45,45 @@ public extension SwiftSpeech.Demos.Basic{
                     SwiftSpeech.RecordButton.RecordButtonCustom()
                         .swiftSpeechToggleRecordingOnTap(sessionConfiguration: sessionConfiguration, animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
                         .onRecognizeLatest(update: $text)
-                        .onChange(of: text) {
+                    
+                        .onChange(of: text){ element in
+                            if nonPoliceKeywords.contains(element){
+                                msg.sendText()
+                            }
+                            if policeKeywords.contains(element){
+                                msg.sendText()
+                            }
+                        }
+                    
+                    NavigationLink(destination: HomeView(record: true), isActive: .constant(text.lowercased().range(of: "record audio") != nil)) {
+                    }.onTapGesture {
+                        self.recording.startRecording()
+                    }
+                    
+                    NavigationLink(destination: CameraView(), isActive: .constant(text.lowercased().range(of: "record video") != nil)) {
+                    }
+                    
+                       /*.onChange(of: text) {
                             element in
-                            if element.lowercased().range(of: "record audio") != nil {
+                            
+                            
+                            /*if element.lowercased().range(of: "record audio") != nil {
                                 recording.startRecording()
                                 NavigationLink(destination: HomeView()) { }
+                            }*/
+                            if element.lowercased().range(of: "record video") != nil {
+                                //recording.startRecording()
+                                NavigationLink(destination: CameraView()) { }
                             }
                             if nonPoliceKeywords.contains(element){
                                 
                             }
-                            if nonPoliceKeywords.contains(element){
+                            if policeKeywords.contains(element){
                                 
                             }
                             
                             
-                        }
+                        }*/
                             
                     
                 }.onAppear {
