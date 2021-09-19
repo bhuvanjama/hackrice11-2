@@ -21,12 +21,15 @@ class ListofContacts: ObservableObject {
 
     
     func listofContacts() {
+        
+        
         db.child("Emergency-Contacts").child(email ?? "hello-gmail-com").observe(.childAdded, with: { (snapshot) in
-                        
-            print(snapshot.key)
-            self.names.append(snapshot.key)
+            
+            if self.names.contains(snapshot.key) == false {
+                self.names.append(snapshot.key)
+            }
             namesArray = self.names
-
+        
         })
         
     }
