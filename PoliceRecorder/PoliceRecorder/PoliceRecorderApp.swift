@@ -10,46 +10,43 @@ import Firebase
  
 @main
 struct PoliceRecorderApp: App {
-    let persistenceController = PersistenceController.shared
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     @State private var selection = 1
  
     var body: some Scene {
         WindowGroup {
-            LoginView()
-            
+            //LoginView()
             NavigationView {
-            TabView(selection: $selection){
-                /*SpeechRecognitionView()
-                    .tabItem{
-                        Label("Speech", systemImage: "mic")
-                    }
-                */
-               
-                CameraView()
-                    //ContentView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .tabItem{
-                        Label("Camera", systemImage: "camera")
-                    }
-//                LoginView()
-//                    .tabItem {
-//                        Label("Login", systemImage: "lock")
-//                    }
-                HomeView(record: false)
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }.tag(1)
-                EmergencyContactsView()
-                    .tabItem {
-                        Label("Emergency Contacts", systemImage: "staroflife")
-                    }
-                AddEmergencyContactsView()
-                    .tabItem {
-                        Label("Add", systemImage: "person.badge.plus")
-                    }
-            }
-            }
+             TabView(selection: $selection){
+                 /*SpeechRecognitionView()
+                     .tabItem{
+                         Label("Speech", systemImage: "mic")
+                     }
+                 */
+                
+                 CameraView()
+                     //ContentView()
+                     .tabItem{
+                         Label("Camera", systemImage: "camera")
+                     }
+ //                LoginView()
+ //                    .tabItem {
+ //                        Label("Login", systemImage: "lock")
+ //                    }
+                 HomeView(record: false)
+                     .tabItem {
+                         Label("Home", systemImage: "house")
+                     }.tag(1)
+                 EmergencyContactsView()
+                     .tabItem {
+                         Label("Emergency Contacts", systemImage: "staroflife")
+                     }
+                 AddEmergencyContactsView()
+                     .tabItem {
+                         Label("Add", systemImage: "person.badge.plus")
+                     }
+             }
+             }
         }
     }
     class AppDelegate: NSObject, UIApplicationDelegate {

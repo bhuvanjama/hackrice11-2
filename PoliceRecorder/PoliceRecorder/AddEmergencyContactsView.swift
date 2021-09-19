@@ -55,10 +55,10 @@ struct AddEmergencyContactsView: View {
                     
                     let contactInfo = ["name": emergencyContact, "phoneNumber": phoneNumber] as [String : Any]
                     
-                    print(emergencyContact + "\(phoneNumber)")
-                    print(email!)
+                    //print(emergencyContact + "\(phoneNumber)")
+                    //print(email!)
                     
-                    db.child("Emergency-Contacts").child(email!).child(emergencyContact).setValue(contactInfo)
+                    db.child("Emergency-Contacts").child(email ?? "hello-gmail-com").child(emergencyContact).setValue(contactInfo)
                     
                     
                 }, label: {

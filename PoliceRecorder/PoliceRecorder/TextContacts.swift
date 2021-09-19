@@ -11,7 +11,8 @@ import MessageUI
 import MapKit
 import CoreLocation
 
-class TextContacts {
+//class TextContacts {
+struct TextContacts {
     
     let ref = Database.database().reference()
     let email = Auth.auth().currentUser?.email?.replacingOccurrences(of: ".", with: "-").replacingOccurrences(of: "@", with: "-")
@@ -23,7 +24,13 @@ class TextContacts {
             
             let value = snapshot.value as? NSDictionary
             
-            self.ref.child("Emergency-Contacts").child(self.email ?? "hello-gmail-com").child(snapshot.key).observeSingleEvent(of: .value, with: { (snapshot) in
+            let phoneNumber = value?["phoneNumber"] as? Int
+
+                       let sms: String = "sms:\(String(describing: phoneNumber))&body=\("I'm in trouble")"
+                       let strURL: String = sms.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!
+                       UIApplication.shared.open(URL.init(string: strURL)!,options: [:], completionHandler: nil)
+            
+            /*self.ref.child("Emergency-Contacts").child(self.email ?? "hello-gmail-com").child(snapshot.key).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 let val = snapshot.value as? NSDictionary
                 
@@ -35,7 +42,7 @@ class TextContacts {
                     let strURL: String = sms.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!
                     UIApplication.shared.open(URL.init(string: strURL)!,options: [:], completionHandler: nil)
                 }
-            })
+            })*/
         })
     }
 }

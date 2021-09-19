@@ -59,7 +59,7 @@ struct LoginView: View {
                 .cornerRadius(20)
                 .offset(y: 15)
                 
-                NavigationLink(destination: HomeView()) {
+                NavigationLink(destination: MenuView()) {
                     Text("Sign In").foregroundColor(.white).padding()
                 }.frame(width: 150, alignment: .center)
                 .cornerRadius(20)
@@ -75,8 +75,6 @@ struct LoginView: View {
                 .padding(1)
                 
 //                Button(action: {
-//                    //@pranav - add a nav link here to the registration page
-//
 //                }, label: {
 //                    Text("Create an Account").foregroundColor(.white).padding()
 //                }).frame(width: 250, alignment: .center)
