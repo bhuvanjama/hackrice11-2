@@ -33,6 +33,8 @@ struct HomeView: View {
             
             if self.record {
                 Circle().stroke(Color.white, lineWidth: 6).frame(width: 85, height: 85)
+            } else{
+                Circle().frame(width: 85, height: 85)
             }
             
             if self.record {
@@ -75,7 +77,7 @@ struct HomeView: View {
             let metadata = StorageMetadata()
             metadata.contentType = "audio/m4a"
                                         
-            let vidRef = storage.child("recordings").child(email!).child("myPoliceRcd_\(self.audios.count + 1).m4a")
+            let vidRef = storage.child("recordings").child(email ?? "hello-gmail-com").child("myPoliceRcd_\(self.audios.count + 1).m4a")
             do {
                 let audioData = try Data(contentsOf: (recorder?.url ?? URL(string: "https://www.google.com"))!)
                 vidRef.putData(audioData, metadata: metadata) { (data, error) in
@@ -132,12 +134,13 @@ struct HomeView: View {
                     }, label: {
                         
                         ZStack {
-                            Circle().fill(Color.red).frame(width: 70, height: 70)
+                            Circle().fill(Color.blue).frame(width: 70, height: 70)
                             
                             
                             if self.record {
-                                Circle().stroke(Color.white, lineWidth: 6).frame(width: 85, height: 85)
+                                Circle().fill(Color.blue).frame(width: 70, height: 70)
                             }
+                            
                         }
                         
                     })

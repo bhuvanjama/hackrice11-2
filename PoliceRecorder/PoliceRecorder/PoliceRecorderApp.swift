@@ -12,15 +12,16 @@ import Firebase
 struct PoliceRecorderApp: App {
     let persistenceController = PersistenceController.shared
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    @State private var selection = 1
  
     var body: some Scene {
         WindowGroup {
-            TabView{
-                SpeechRecognitionView()
+            TabView(selection: $selection){
+                /*SpeechRecognitionView()
                     .tabItem{
                         Label("Speech", systemImage: "mic")
                     }
-                
+                */
                
                 CameraView()
                     //ContentView()
@@ -28,16 +29,14 @@ struct PoliceRecorderApp: App {
                     .tabItem{
                         Label("Camera", systemImage: "camera")
                     }
-                
-                HomeView(record: false)
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
- 
                 LoginView()
                     .tabItem {
                         Label("Login", systemImage: "lock")
                     }
+                HomeView(record: false)
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }.tag(1)
                 EmergencyContactsView()
                     .tabItem {
                         Label("Emergency Contacts", systemImage: "staroflife")
