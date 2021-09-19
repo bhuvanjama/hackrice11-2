@@ -36,8 +36,8 @@ struct AddEmergencyContactsView: View {
                 }.padding(12)
                 .background(Color.white)
                 .cornerRadius(20)
-                .padding(.leading, 30)
-                .padding(.trailing, 30)
+                .padding(.leading, 12)
+                .padding(.trailing, 12)
                 
                 HStack {
                     Image(systemName: "phone").resizable().frame(width: 20, height: 20)
@@ -66,9 +66,6 @@ struct AddEmergencyContactsView: View {
 })
                 
             }
-            
-            
-            
         }
     }
 }
