@@ -62,10 +62,25 @@
 		D02EC3FB26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */; };
 		D02EC3FC26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */; };
 		D02EC3FD26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */; };
-		D02EC40326F6C7C3000C4670 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40226F6C7C3000C4670 /* CameraService.swift */; };
-		D02EC40426F6C7C3000C4670 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40226F6C7C3000C4670 /* CameraService.swift */; };
-		D02EC40526F6C7C3000C4670 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40226F6C7C3000C4670 /* CameraService.swift */; };
 		D02EC40826F6CD70000C4670 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D02EC40726F6CD70000C4670 /* Camera-SwiftUI */; };
+		D02EC40E26F6E579000C4670 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40D26F6E579000C4670 /* CameraController.swift */; };
+		D02EC40F26F6E579000C4670 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40D26F6E579000C4670 /* CameraController.swift */; };
+		D02EC41026F6E579000C4670 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40D26F6E579000C4670 /* CameraController.swift */; };
+		D02EC41226F6E59C000C4670 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC41126F6E59C000C4670 /* CameraViewController.swift */; };
+		D02EC41326F6E59C000C4670 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC41126F6E59C000C4670 /* CameraViewController.swift */; };
+		D02EC41426F6E59C000C4670 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC41126F6E59C000C4670 /* CameraViewController.swift */; };
+		D02EC41626F6E5EC000C4670 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC41526F6E5EC000C4670 /* ViewController.swift */; };
+		D02EC41726F6E5EC000C4670 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC41526F6E5EC000C4670 /* ViewController.swift */; };
+		D02EC41826F6E5EC000C4670 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC41526F6E5EC000C4670 /* ViewController.swift */; };
+		D02EC42926F6E7C9000C4670 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC42826F6E7C9000C4670 /* CameraView.swift */; };
+		D02EC42A26F6E7C9000C4670 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC42826F6E7C9000C4670 /* CameraView.swift */; };
+		D02EC42B26F6E7C9000C4670 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC42826F6E7C9000C4670 /* CameraView.swift */; };
+		D02EC42D26F6EAA0000C4670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02EC42C26F6EAA0000C4670 /* LaunchScreen.storyboard */; };
+		D02EC42E26F6EAA0000C4670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02EC42C26F6EAA0000C4670 /* LaunchScreen.storyboard */; };
+		D02EC42F26F6EAA0000C4670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02EC42C26F6EAA0000C4670 /* LaunchScreen.storyboard */; };
+		D02EC43226F6EB52000C4670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02EC43026F6EB52000C4670 /* Main.storyboard */; };
+		D02EC43326F6EB52000C4670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02EC43026F6EB52000C4670 /* Main.storyboard */; };
+		D02EC43426F6EB52000C4670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02EC43026F6EB52000C4670 /* Main.storyboard */; };
 		E751304DADD61F0A533CC586 /* Pods_PoliceRecorder_PoliceRecorderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0A3FC56036B5A45FFB11C1 /* Pods_PoliceRecorder_PoliceRecorderUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +140,12 @@
 		D02EC3EE26F68CFA000C4670 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D02EC3F226F68F63000C4670 /* ViewModifiersCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiersCustom.swift; sourceTree = "<group>"; };
 		D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButtonCustom.swift; sourceTree = "<group>"; };
-		D02EC40226F6C7C3000C4670 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		D02EC40D26F6E579000C4670 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		D02EC41126F6E59C000C4670 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		D02EC41526F6E5EC000C4670 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D02EC42826F6E7C9000C4670 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		D02EC42C26F6EAA0000C4670 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PoliceRecorder/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		D02EC43126F6EB52000C4670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E05371333FB36B2BD4CB7A52 /* Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig"; path = "Target Support Files/Pods-PoliceRecorder-PoliceRecorderUITests/Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,7 +227,10 @@
 				6F2E168726F5A481004D9647 /* RegistrationView.swift */,
 				56789E5E26F47BA400B9A35D /* AuthBackend.swift */,
 				5661546B26F583B200C559DD /* AudioRecorder.swift */,
-				D02EC40226F6C7C3000C4670 /* CameraService.swift */,
+				D02EC40D26F6E579000C4670 /* CameraController.swift */,
+				D02EC41126F6E59C000C4670 /* CameraViewController.swift */,
+				D02EC41526F6E5EC000C4670 /* ViewController.swift */,
+				D02EC42826F6E7C9000C4670 /* CameraView.swift */,
 				5661546526F57B4100C559DD /* RegistrationBackend.swift */,
 				D02EC2DE26F58299000C4670 /* HomeView.swift */,
 				D02EC39D26F5BB3C000C4670 /* SpeechRecognitionView.swift */,
@@ -216,6 +239,7 @@
 				D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */,
 				56789E5626F4726700B9A35D /* TodoFirebaseApp.swift */,
 				56789E2426F46FEC00B9A35D /* ContentView.swift */,
+				D02EC41926F6E6B4000C4670 /* Base.lproj */,
 				56789E2626F46FF000B9A35D /* Assets.xcassets */,
 				56789E2B26F46FF000B9A35D /* Persistence.swift */,
 				56789E3026F46FF000B9A35D /* Info.plist */,
@@ -249,6 +273,16 @@
 				56789E4626F46FF000B9A35D /* Info.plist */,
 			);
 			path = PoliceRecorderUITests;
+			sourceTree = "<group>";
+		};
+		D02EC41926F6E6B4000C4670 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				D02EC43026F6EB52000C4670 /* Main.storyboard */,
+				D02EC42C26F6EAA0000C4670 /* LaunchScreen.storyboard */,
+			);
+			name = Base.lproj;
+			path = "../../../../../../Downloads/CameraDemoStarter/AV Foundation/Base.lproj";
 			sourceTree = "<group>";
 		};
 		E37FC1772B67D873EDA65071 /* Frameworks */ = {
@@ -380,6 +414,8 @@
 				56789E5326F470EA00B9A35D /* Podfile in Resources */,
 				56789E2A26F46FF000B9A35D /* Preview Assets.xcassets in Resources */,
 				D02EC3EF26F68CFA000C4670 /* GoogleService-Info.plist in Resources */,
+				D02EC43226F6EB52000C4670 /* Main.storyboard in Resources */,
+				D02EC42D26F6EAA0000C4670 /* LaunchScreen.storyboard in Resources */,
 				56789E2726F46FF000B9A35D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +424,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02EC43326F6EB52000C4670 /* Main.storyboard in Resources */,
+				D02EC42E26F6EAA0000C4670 /* LaunchScreen.storyboard in Resources */,
 				D02EC3F026F68CFA000C4670 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +434,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02EC43426F6EB52000C4670 /* Main.storyboard in Resources */,
+				D02EC42F26F6EAA0000C4670 /* LaunchScreen.storyboard in Resources */,
 				D02EC3F126F68CFA000C4670 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,14 +551,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F2E168826F5A481004D9647 /* RegistrationView.swift in Sources */,
-				D02EC40326F6C7C3000C4670 /* CameraService.swift in Sources */,
 				D02EC3FB26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
 				D02EC2DF26F58299000C4670 /* HomeView.swift in Sources */,
 				5661549026F6AB5F00C559DD /* ListofContacts.swift in Sources */,
 				56789E5B26F47B2200B9A35D /* LoginView.swift in Sources */,
 				56789E5726F4726700B9A35D /* TodoFirebaseApp.swift in Sources */,
 				56789E2C26F46FF000B9A35D /* Persistence.swift in Sources */,
+				D02EC42926F6E7C9000C4670 /* CameraView.swift in Sources */,
+				D02EC40E26F6E579000C4670 /* CameraController.swift in Sources */,
 				D02EC3EB26F68AA6000C4670 /* DemoCustom.swift in Sources */,
+				D02EC41226F6E59C000C4670 /* CameraViewController.swift in Sources */,
 				5661546C26F583B200C559DD /* AudioRecorder.swift in Sources */,
 				56789E2F26F46FF000B9A35D /* PoliceRecorder.xcdatamodeld in Sources */,
 				5661547426F5B40E00C559DD /* EmergencyContactsView.swift in Sources */,
@@ -527,6 +569,7 @@
 				56789E5F26F47BA400B9A35D /* AuthBackend.swift in Sources */,
 				D02EC3F326F68F63000C4670 /* ViewModifiersCustom.swift in Sources */,
 				D02EC39E26F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */,
+				D02EC41626F6E5EC000C4670 /* ViewController.swift in Sources */,
 				56789E2326F46FEC00B9A35D /* PoliceRecorderApp.swift in Sources */,
 				5661546626F57B4100C559DD /* RegistrationBackend.swift in Sources */,
 			);
@@ -539,18 +582,21 @@
 				5661546D26F583B200C559DD /* AudioRecorder.swift in Sources */,
 				56789E5C26F47B2200B9A35D /* LoginView.swift in Sources */,
 				56789E5826F4726700B9A35D /* TodoFirebaseApp.swift in Sources */,
+				D02EC42A26F6E7C9000C4670 /* CameraView.swift in Sources */,
 				5661548126F5D25600C559DD /* AddEmergencyContactsView.swift in Sources */,
 				D02EC3FC26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
-				D02EC40426F6C7C3000C4670 /* CameraService.swift in Sources */,
 				D02EC3F426F68F63000C4670 /* ViewModifiersCustom.swift in Sources */,
 				6F2E168926F5A481004D9647 /* RegistrationView.swift in Sources */,
 				5661549126F6AB5F00C559DD /* ListofContacts.swift in Sources */,
 				56789E6026F47BA400B9A35D /* AuthBackend.swift in Sources */,
+				D02EC41726F6E5EC000C4670 /* ViewController.swift in Sources */,
 				D02EC2E026F58299000C4670 /* HomeView.swift in Sources */,
 				D02EC39F26F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */,
 				56789E3A26F46FF000B9A35D /* PoliceRecorderTests.swift in Sources */,
 				D02EC3EC26F68AA6000C4670 /* DemoCustom.swift in Sources */,
+				D02EC40F26F6E579000C4670 /* CameraController.swift in Sources */,
 				5661547526F5B40E00C559DD /* EmergencyContactsView.swift in Sources */,
+				D02EC41326F6E59C000C4670 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,18 +607,21 @@
 				5661546E26F583B200C559DD /* AudioRecorder.swift in Sources */,
 				56789E5D26F47B2200B9A35D /* LoginView.swift in Sources */,
 				56789E5926F4726700B9A35D /* TodoFirebaseApp.swift in Sources */,
+				D02EC42B26F6E7C9000C4670 /* CameraView.swift in Sources */,
 				5661548226F5D25600C559DD /* AddEmergencyContactsView.swift in Sources */,
 				D02EC3FD26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
-				D02EC40526F6C7C3000C4670 /* CameraService.swift in Sources */,
 				D02EC3F526F68F63000C4670 /* ViewModifiersCustom.swift in Sources */,
 				6F2E168A26F5A481004D9647 /* RegistrationView.swift in Sources */,
 				5661549226F6AB5F00C559DD /* ListofContacts.swift in Sources */,
 				56789E6126F47BA400B9A35D /* AuthBackend.swift in Sources */,
+				D02EC41826F6E5EC000C4670 /* ViewController.swift in Sources */,
 				D02EC2E126F58299000C4670 /* HomeView.swift in Sources */,
 				D02EC3A026F5BB3C000C4670 /* SpeechRecognitionView.swift in Sources */,
 				56789E4526F46FF000B9A35D /* PoliceRecorderUITests.swift in Sources */,
 				D02EC3ED26F68AA6000C4670 /* DemoCustom.swift in Sources */,
+				D02EC41026F6E579000C4670 /* CameraController.swift in Sources */,
 				5661547626F5B40E00C559DD /* EmergencyContactsView.swift in Sources */,
+				D02EC41426F6E59C000C4670 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +639,17 @@
 			targetProxy = 56789E4126F46FF000B9A35D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D02EC43026F6EB52000C4670 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D02EC43126F6EB52000C4670 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		56789E4726F46FF000B9A35D /* Debug */ = {
@@ -716,7 +776,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PoliceRecorder/Preview Content\"";
-				DEVELOPMENT_TEAM = H3Q5S94X2R;
+				DEVELOPMENT_TEAM = Y26VBSXG4Z;
 				ENABLE_PREVIEWS = YES;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = PoliceRecorder/Info.plist;
@@ -740,7 +800,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PoliceRecorder/Preview Content\"";
-				DEVELOPMENT_TEAM = H3Q5S94X2R;
+				DEVELOPMENT_TEAM = Y26VBSXG4Z;
 				ENABLE_PREVIEWS = YES;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = PoliceRecorder/Info.plist;

@@ -20,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access your camera to record your police interactions</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need access to your microphone to record your police interactions.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This app uses speech recognition to convert your speech into text.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -39,10 +45,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSSpeechRecognitionUsageDescription</key>
-    <string>This app uses speech recognition to convert your speech into text.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>We need access to your microphone to record your police interactions.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
