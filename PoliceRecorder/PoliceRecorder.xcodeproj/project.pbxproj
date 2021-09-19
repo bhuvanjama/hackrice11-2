@@ -62,6 +62,10 @@
 		D02EC3FB26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */; };
 		D02EC3FC26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */; };
 		D02EC3FD26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */; };
+		D02EC40326F6C7C3000C4670 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40226F6C7C3000C4670 /* CameraService.swift */; };
+		D02EC40426F6C7C3000C4670 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40226F6C7C3000C4670 /* CameraService.swift */; };
+		D02EC40526F6C7C3000C4670 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02EC40226F6C7C3000C4670 /* CameraService.swift */; };
+		D02EC40826F6CD70000C4670 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D02EC40726F6CD70000C4670 /* Camera-SwiftUI */; };
 		E751304DADD61F0A533CC586 /* Pods_PoliceRecorder_PoliceRecorderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0A3FC56036B5A45FFB11C1 /* Pods_PoliceRecorder_PoliceRecorderUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +125,7 @@
 		D02EC3EE26F68CFA000C4670 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D02EC3F226F68F63000C4670 /* ViewModifiersCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiersCustom.swift; sourceTree = "<group>"; };
 		D02EC3FA26F69B9F000C4670 /* RecordButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButtonCustom.swift; sourceTree = "<group>"; };
+		D02EC40226F6C7C3000C4670 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		E05371333FB36B2BD4CB7A52 /* Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig"; path = "Target Support Files/Pods-PoliceRecorder-PoliceRecorderUITests/Pods-PoliceRecorder-PoliceRecorderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D02EC39C26F5B98B000C4670 /* SwiftSpeech in Frameworks */,
+				D02EC40826F6CD70000C4670 /* Camera-SwiftUI in Frameworks */,
 				9924F342F5F7F69C4FBFB6B1 /* Pods_PoliceRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +207,7 @@
 				6F2E168726F5A481004D9647 /* RegistrationView.swift */,
 				56789E5E26F47BA400B9A35D /* AuthBackend.swift */,
 				5661546B26F583B200C559DD /* AudioRecorder.swift */,
+				D02EC40226F6C7C3000C4670 /* CameraService.swift */,
 				5661546526F57B4100C559DD /* RegistrationBackend.swift */,
 				D02EC2DE26F58299000C4670 /* HomeView.swift */,
 				D02EC39D26F5BB3C000C4670 /* SpeechRecognitionView.swift */,
@@ -274,6 +281,7 @@
 			name = PoliceRecorder;
 			packageProductDependencies = (
 				D02EC39B26F5B98B000C4670 /* SwiftSpeech */,
+				D02EC40726F6CD70000C4670 /* Camera-SwiftUI */,
 			);
 			productName = PoliceRecorder;
 			productReference = 56789E1F26F46FEC00B9A35D /* PoliceRecorder.app */;
@@ -351,6 +359,7 @@
 			mainGroup = 56789E1626F46FEC00B9A35D;
 			packageReferences = (
 				D02EC39A26F5B98B000C4670 /* XCRemoteSwiftPackageReference "SwiftSpeech" */,
+				D02EC40626F6CD70000C4670 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
 			);
 			productRefGroup = 56789E2026F46FEC00B9A35D /* Products */;
 			projectDirPath = "";
@@ -502,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F2E168826F5A481004D9647 /* RegistrationView.swift in Sources */,
+				D02EC40326F6C7C3000C4670 /* CameraService.swift in Sources */,
 				D02EC3FB26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
 				D02EC2DF26F58299000C4670 /* HomeView.swift in Sources */,
 				5661549026F6AB5F00C559DD /* ListofContacts.swift in Sources */,
@@ -531,6 +541,7 @@
 				56789E5826F4726700B9A35D /* TodoFirebaseApp.swift in Sources */,
 				5661548126F5D25600C559DD /* AddEmergencyContactsView.swift in Sources */,
 				D02EC3FC26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
+				D02EC40426F6C7C3000C4670 /* CameraService.swift in Sources */,
 				D02EC3F426F68F63000C4670 /* ViewModifiersCustom.swift in Sources */,
 				6F2E168926F5A481004D9647 /* RegistrationView.swift in Sources */,
 				5661549126F6AB5F00C559DD /* ListofContacts.swift in Sources */,
@@ -552,6 +563,7 @@
 				56789E5926F4726700B9A35D /* TodoFirebaseApp.swift in Sources */,
 				5661548226F5D25600C559DD /* AddEmergencyContactsView.swift in Sources */,
 				D02EC3FD26F69B9F000C4670 /* RecordButtonCustom.swift in Sources */,
+				D02EC40526F6C7C3000C4670 /* CameraService.swift in Sources */,
 				D02EC3F526F68F63000C4670 /* ViewModifiersCustom.swift in Sources */,
 				6F2E168A26F5A481004D9647 /* RegistrationView.swift in Sources */,
 				5661549226F6AB5F00C559DD /* ListofContacts.swift in Sources */,
@@ -882,6 +894,14 @@
 				minimumVersion = 0.9.3;
 			};
 		};
+		D02EC40626F6CD70000C4670 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rorodriguez116/Camera-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -889,6 +909,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D02EC39A26F5B98B000C4670 /* XCRemoteSwiftPackageReference "SwiftSpeech" */;
 			productName = SwiftSpeech;
+		};
+		D02EC40726F6CD70000C4670 /* Camera-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D02EC40626F6CD70000C4670 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
+			productName = "Camera-SwiftUI";
 		};
 /* End XCSwiftPackageProductDependency section */
 
