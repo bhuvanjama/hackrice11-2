@@ -51,7 +51,6 @@ struct RegistrationView: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                 
-                Text("Log in to existing account")
 
                 
                 TextField("Username", text: $username)
@@ -117,7 +116,7 @@ struct RegistrationView: View {
                             
                         }, label: {
                         Spacer()
-                        Text("create")
+                        Text("Create")
                             .font(.title)
                             .fontWeight(.bold)
                             
@@ -135,12 +134,16 @@ struct RegistrationView: View {
                     
                     Text("Already have an account?")
                         
-                    Text("Sign In")
-                        .foregroundColor(.black)
-                        .fontWeight(.semibold)
-                        .onTapGesture{
-                            
-                        }
+                    NavigationLink(destination: LoginView()){
+                        
+                        Text("Sign In")
+                            .foregroundColor(.black)
+                            .fontWeight(.semibold)
+                            .onTapGesture{
+                                
+                            } 
+                    }
+                
                 }
                      
             }.padding(30)
