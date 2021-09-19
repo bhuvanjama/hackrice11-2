@@ -59,24 +59,16 @@ struct LoginView: View {
                 .cornerRadius(20)
                 .offset(y: 15)
                 
-                Button(action: {
-                    
-                    //call sign in func
-                    
-                    let auth: AuthBackend = AuthBackend()
-                    auth.loginAuth(username: user, password: pass)
-                    
-                    //@pranav - add nav link here to menu page
-                    
-                }, label: {
+                NavigationLink(destination: HomeView()) {
                     Text("Sign In").foregroundColor(.white).padding()
-                }).frame(width: 150, alignment: .center)
+                }.frame(width: 150, alignment: .center)
                 .cornerRadius(20)
                 .offset(y: 15)
                 .padding(2)
+                
                 //register button
                 NavigationLink(destination: RegistrationView()) {
-                    Text("Create an ACCOUNT").foregroundColor(.white).padding()
+                    Text("Create an Account").foregroundColor(.white).padding()
                 }.frame(width: 250, alignment: .center)
                 .cornerRadius(20)
                 .offset(y: 15)
