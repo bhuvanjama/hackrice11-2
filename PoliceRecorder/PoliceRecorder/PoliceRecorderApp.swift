@@ -16,6 +16,9 @@ struct PoliceRecorderApp: App {
  
     var body: some Scene {
         WindowGroup {
+            LoginView()
+            
+            NavigationView {
             TabView(selection: $selection){
                 /*SpeechRecognitionView()
                     .tabItem{
@@ -29,10 +32,10 @@ struct PoliceRecorderApp: App {
                     .tabItem{
                         Label("Camera", systemImage: "camera")
                     }
-                LoginView()
-                    .tabItem {
-                        Label("Login", systemImage: "lock")
-                    }
+//                LoginView()
+//                    .tabItem {
+//                        Label("Login", systemImage: "lock")
+//                    }
                 HomeView(record: false)
                     .tabItem {
                         Label("Home", systemImage: "house")
@@ -46,7 +49,7 @@ struct PoliceRecorderApp: App {
                         Label("Add", systemImage: "person.badge.plus")
                     }
             }
-            
+            }
         }
     }
     class AppDelegate: NSObject, UIApplicationDelegate {
