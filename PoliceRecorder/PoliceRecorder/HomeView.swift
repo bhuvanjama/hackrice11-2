@@ -10,6 +10,7 @@ import CoreData
 import AVKit
 import SwiftSpeech
 import Firebase
+import AVFoundation
 
 struct HomeView: View {
     
@@ -137,6 +138,8 @@ struct HomeView: View {
         }*/
     }
     
+    @State var audioPlayer: AVAudioPlayer!
+    
     var body: some View {
         
         NavigationView {
@@ -154,6 +157,15 @@ struct HomeView: View {
                         ForEach(self.audios.indices, id: \.self){ i in
                             Button(action: {
                                 //open mp4 file
+                                let path = Bundle.main.path(forResource: "myPoliceRcd-1.m4a", ofType:nil)!
+                                let url = URL(fileURLWithPath: path)
+
+                                do {
+                                    audioPlayer = try AVAudioPlayer(contentsOf: url)
+                                    audioPlayer?.play()
+                                } catch {
+                                    print("Failed to open file")
+                                }
                             }, label: {
                                 Text(self.audios[i].relativeString)
                             })
