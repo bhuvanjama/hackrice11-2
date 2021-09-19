@@ -8,8 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct CameraView: View{
-    var body: some View{
-        Text("Test")
+struct CameraView: UIViewControllerRepresentable{
+    func makeUIViewController(context: UIViewControllerRepresentableContext<CameraView>) -> UIViewController{
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(identifier: "Camera")
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<CameraView>){
+        
     }
 }

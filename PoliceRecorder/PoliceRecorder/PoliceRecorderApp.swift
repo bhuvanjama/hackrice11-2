@@ -22,9 +22,8 @@ struct PoliceRecorderApp: App {
                     }
                 
                
-                //CameraViewController()
-                  //       .edgesIgnoringSafeArea(.top)
-                    ContentView()
+                CameraView()
+                    //ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem{
                         Label("Content", systemImage: "square.and.pencil")
