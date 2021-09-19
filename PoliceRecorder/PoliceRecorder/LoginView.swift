@@ -45,15 +45,15 @@ struct LoginView: View {
                 Image("Aura").resizable().frame(width: 200, height: 200).padding(.bottom, 15)
                 
                 HStack {
-                    Image(systemName: "person").resizable().frame(width: 20, height: 20)
-                    TextField("Username", text: $user).padding(.leading, 12).font(.system(size: 20))
+                    Image(systemName: "person").resizable().frame(width: 20, height: 20).foregroundColor(.black)
+                    TextField("Username", text: $user).padding(.leading, 12).font(.system(size: 20)).foregroundColor(.red)
                 }.padding(12)
                 .background(Color.white)
                 .cornerRadius(20)
                 
                 HStack {
-                    Image(systemName: "lock").resizable().frame(width: 15, height: 20).padding(.leading, 3)
-                    SecureField("Password", text: $pass).padding(.leading, 12).font(.system(size: 20))
+                    Image(systemName: "lock").resizable().frame(width: 15, height: 20).padding(.leading, 3).foregroundColor(.black)
+                    SecureField("Password", text: $pass).padding(.leading, 12).font(.system(size: 20)).foregroundColor(.red)
                 }.padding(12)
                 .background(Color.white)
                 .cornerRadius(20)

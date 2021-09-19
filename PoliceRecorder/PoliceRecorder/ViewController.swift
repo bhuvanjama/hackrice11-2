@@ -83,6 +83,7 @@ class ViewController: UIViewController {
 extension ViewController {
     override func viewDidLoad() {
         func configureCameraController() {
+            super.viewDidLoad()
             cameraController.prepare {(error) in
                 if let error = error {
                     print(error)

@@ -35,6 +35,10 @@ public extension SwiftSpeech.Demos.Basic{
         public var body: some View {
  
                 VStack(spacing: 35.0) {
+                    
+                    let nonPoliceKeywords = ["No means no", "I'm uncomfortable", "Leave me alone"]
+                    let policeKeywords = ["Gun", "Tase", "Hands Up", "I can't breathe", "Hurts"]
+                    
                     Text(text)
                         .font(.system(size: 20, weight: .thin, design: .default))
                     SwiftSpeech.RecordButton.RecordButtonCustom()
@@ -46,6 +50,13 @@ public extension SwiftSpeech.Demos.Basic{
                                 recording.startRecording()
                                 NavigationLink(destination: HomeView()) { }
                             }
+                            if nonPoliceKeywords.contains(element){
+                                
+                            }
+                            if nonPoliceKeywords.contains(element){
+                                
+                            }
+                            
                             
                         }
                             

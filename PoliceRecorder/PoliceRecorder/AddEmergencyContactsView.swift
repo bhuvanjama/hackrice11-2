@@ -36,6 +36,8 @@ struct AddEmergencyContactsView: View {
                 }.padding(12)
                 .background(Color.white)
                 .cornerRadius(20)
+                .padding(.leading, 30)
+                .padding(.trailing, 30)
                 
                 HStack {
                     Image(systemName: "phone").resizable().frame(width: 20, height: 20)
@@ -43,8 +45,8 @@ struct AddEmergencyContactsView: View {
                 }.padding(12)
                 .background(Color.white)
                 .cornerRadius(20)
-                .padding(.leading, 12)
-                .padding(.trailing, 12)
+                .padding(.leading, 30)
+                .padding(.trailing, 30)
                 
                 Button(action: {
                     
@@ -59,7 +61,8 @@ struct AddEmergencyContactsView: View {
                     db.child("Emergency-Contacts").child(email!).child(emergencyContact).setValue(contactInfo)
                     
                     
-                }, label: { Text("Add Contact").padding(.leading, 12).font(.system(size: 20))
+                }, label: {
+                    Text("Add Contact").padding(.leading, 12).padding(.trailing, 12).font(.system(size: 20)).foregroundColor(.black)
 })
                 
             }

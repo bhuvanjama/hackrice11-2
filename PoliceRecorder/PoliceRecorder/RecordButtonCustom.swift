@@ -21,11 +21,11 @@ public extension SwiftSpeech.RecordButton {
         var backgroundColor: Color {
             switch state {
             case .pending:
-                return .red
+                return .white
             case .recording:
-                return .red
+                return .white
             case .cancelling:
-                return .red
+                return .white
             }
         }
         
@@ -34,12 +34,12 @@ public extension SwiftSpeech.RecordButton {
             ZStack {
                 backgroundColor
                     .animation(.easeOut(duration: 0.2))
-                    .clipShape(Circle())
-                    .environment(\.isEnabled, $authStatus)  // When isEnabled is false, the accent color is gray and all user interactions are disabled inside the view.
+                    .clipShape(Rectangle())
+                    .environment(\.isEnabled, $authStatus)  
                     .zIndex(0)
                 
                 Image(systemName: "xmark")
-                    .font(.system(size: 20, weight: .medium, design: .default))
+                    .font(.system(size: 30, weight: .medium, design: .default))
                     .foregroundColor(.white)
                     .opacity(state == .recording ? 0.8 : 1.0)
                     .transition(.opacity)

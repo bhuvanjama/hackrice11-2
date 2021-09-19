@@ -37,7 +37,7 @@ struct EmergencyContactsView: View {
                             }.onTapGesture {
                                 
                                 
-                                db.child("Emergency-Contacts").child(email!).child(item).observeSingleEvent(of: .value, with: { (snapshot) in
+                                db.child("Emergency-Contacts").child(email ?? "hello-gmail-com").child(item).observeSingleEvent(of: .value, with: { (snapshot) in
                                     
                                     let value = snapshot.value as? NSDictionary
                                     
