@@ -4,12 +4,13 @@
 //
 //  Created by Pranav on 9/17/21.
 //
- 
+
 import SwiftUI
 import CoreData
 import AVKit
 import SwiftSpeech
- 
+import Firebase
+
 struct HomeView: View {
     
     @State var record = false
@@ -20,91 +21,120 @@ struct HomeView: View {
     // fetch audio
     @State var audios: [URL] = []
     
+    let email = Auth.auth().currentUser?.email?.replacingOccurrences(of: ".", with: "-").replacingOccurrences(of: "@", with: "-")
+
+    
+    let storage = Storage.storage().reference()
+    
     var body: some View {
         
         NavigationView {
             
             VStack{
                 
-            VStack {
-                
-                /*List(self.audios, id: \.self) { i in
+                VStack {
                     
-                    Text(i.relativeString)
-                }*/
-                
-                List{
-                    ForEach(self.audios.indices, id: \.self){ i in
-                        Button(action: {
-                            //open mp4 file
-                        }, label: {
-                            Text(self.audios[i].relativeString)
-                        })
+                    /*List(self.audios, id: \.self) { i in
+                     
+                     Text(i.relativeString)
+                     }*/
+                    
+                    List{
+                        ForEach(self.audios.indices, id: \.self){ i in
+                            Button(action: {
+                                //open mp4 file
+                            }, label: {
+                                Text(self.audios[i].relativeString)
+                            })
+                        }
+                        .onDelete(perform: self.deleteAudios)
                     }
-                    .onDelete(perform: self.deleteAudios)
-                }
-                
-                Button(action: {
-
-                    do {
+                    
+                    Button(action: {
                         
-                        if self.record {
+                        do {
                             
-                            //recording already in progress
+                            if self.record {
+                                
+                                //recording already in progress
+                                
+                                self.recorder?.stop()
+                                self.record.toggle()
+                                //updating data for each rcd
+                                self.getAudios()
+                                return
+                            }
                             
-                            self.recorder?.stop()
+                            
+                            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                            
+                            let date = Date()
+                            
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "MM/dd/yyyy"
+                            
+                            let fileName = url.appendingPathComponent("myPoliceRcd-\(self.audios.count + 1).m4a")
+                            
+                            let settings = [
+                                
+                                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                                AVSampleRateKey: 12000,
+                                AVNumberOfChannelsKey: 1,
+                                AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+                                
+                            ]
+                            
+                            self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
+                            
+                            self.recorder.record()
                             self.record.toggle()
-                            //updating data for each rcd
-                            self.getAudios()
-                            return
+                            
+                            let metadata = StorageMetadata()
+                            metadata.contentType = "audio/m4a"
+                                                        
+                            let vidRef = storage.child("recordings").child(email ?? "hello-gmail-com").child("myPoliceRcd-\(self.audios.count + 1).m4a")
+                            do {
+                                let audioData = try Data(contentsOf: recorder.url)
+                                vidRef.putData(audioData, metadata: metadata) { (data, error) in
+                                    if error == nil {
+                                        vidRef.downloadURL { url, error in
+                                            guard let downloadURL = url else { return }
+                                        }
+                                    } else {
+                                        if let error = error?.localizedDescription {
+                                            print(error)
+                                        } else {
+                                        }
+                                    }
+                                }
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                            
+                            
+                            
+                        } catch {
+                            print("Error occurred: " + error.localizedDescription)
                         }
-                    
+                    }, label: {
                         
-                    let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                        ZStack {
+                            Circle().fill(Color.red).frame(width: 70, height: 70)
+                            
+                            
+                            if self.record {
+                                Circle().stroke(Color.white, lineWidth: 6).frame(width: 85, height: 85)
+                            }
+                        }
                         
-                    let date = Date()
-                    
-                    let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "MM/dd/yyyy"
-                    
-                        let fileName = url.appendingPathComponent("myPoliceRcd-\(self.audios.count + 1).m4a")
-                    
-                    let settings = [
-                        
-                        AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                        AVSampleRateKey: 12000,
-                        AVNumberOfChannelsKey: 1,
-                        AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-                        
-                    ]
-                    
-                    self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
-                    
-                        self.recorder.record()
-                        self.record.toggle()
-                        
-                } catch {
-                    print("Error occurred: " + error.localizedDescription)
+                    })
+                    .padding(.vertical, 25)
                 }
-                }, label: {
-                    
-                    ZStack {
-                        Circle().fill(Color.red).frame(width: 70, height: 70)
-           
-                        
-                        if self.record {
-                            Circle().stroke(Color.white, lineWidth: 6).frame(width: 85, height: 85)
-                        }
-                    }
-                    
-                })
-                .padding(.vertical, 25)
-            }
-            .navigationBarTitle("Record Audio")
-        
-            SwiftSpeech.Demos.Basic.BasicCustom(localeIdentifier: "en_US")
-            
-        }//VStack
+                .navigationBarTitle("Record Audio")
+                
+                SwiftSpeech.Demos.Basic.BasicCustom(localeIdentifier: "en_US")
+                
+            }//VStack
             
             
         }
@@ -171,5 +201,5 @@ struct HomeView: View {
         indexSet.forEach({index in
             //delete from firebase
         })
-        }
+    }
 }

@@ -7,22 +7,22 @@
 import Foundation
 import SwiftUI
 
-struct Home: View{
+struct Home: View {
     @State var isShow = false
     var body: some View{
         NavigationView{
-            ZStack{
-                NavigationLink(
-                    destination: RegistrationView(),
-                    isActive: self.$isShow,
-                    label: {
-                        
-                        Text("")
-                    }).hidden()
-                
-                LoginView()
-                
-            }
+//            ZStack{
+//                NavigationLink(
+//                    destination: RegistrationView(),
+//                    isActive: self.$isShow,
+//                    label: {
+//
+//                        Text("")
+//                    }).hidden()
+//
+//                LoginView()
+//
+//            }
         }
     }
 }
@@ -35,6 +35,7 @@ struct LoginView: View {
     
     var body: some View {
         
+        NavigationView {
         ZStack {
             LinearGradient(gradient: .init(colors: [Color("1"), Color("1")]), startPoint: .leading, endPoint: .trailing).edgesIgnoringSafeArea(.all)
             
@@ -74,20 +75,29 @@ struct LoginView: View {
                 .offset(y: 15)
                 .padding(2)
                 //register button
-                Button(action: {
-                    //@pranav - add a nav link here to the registration page
-                    
-                }, label: {
-                    Text("Create an Account").foregroundColor(.white).padding()
-                }).frame(width: 250, alignment: .center)
+                NavigationLink(destination: RegistrationView()) {
+                    Text("Create an ACCOUNT").foregroundColor(.white).padding()
+                }.frame(width: 250, alignment: .center)
                 .cornerRadius(20)
                 .offset(y: 15)
                 .padding(1)
+                
+//                Button(action: {
+//                    //@pranav - add a nav link here to the registration page
+//
+//                }, label: {
+//                    Text("Create an Account").foregroundColor(.white).padding()
+//                }).frame(width: 250, alignment: .center)
+//                .cornerRadius(20)
+//                .offset(y: 15)
+//                .padding(1)
                 
             }
             .padding(.horizontal, 18)
         }
 
+    }
+        
     }
 }
 
