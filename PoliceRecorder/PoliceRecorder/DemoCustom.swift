@@ -17,6 +17,8 @@ public extension SwiftSpeech.Demos.Basic{
         var sessionConfiguration: SwiftSpeech.Session.Configuration
         
         @State var text = "Tap to Speak"
+        @State var recording: HomeView = HomeView(record: true)
+
         
         public init(sessionConfiguration: SwiftSpeech.Session.Configuration) {
             self.sessionConfiguration = sessionConfiguration
@@ -38,13 +40,21 @@ public extension SwiftSpeech.Demos.Basic{
                     SwiftSpeech.RecordButton.RecordButtonCustom()
                         .swiftSpeechToggleRecordingOnTap(sessionConfiguration: sessionConfiguration, animation: .spring(response: 0.3, dampingFraction: 0.5, blendDuration: 0))
                         .onRecognizeLatest(update: $text)
-                    
-                    if text.lowercased().range(of: "record audio") != nil{
-                        HomeView(record: true)
-                    }
+                        .onChange(of: text) {
+                            element in
+                            if element.lowercased().range(of: "record audio") != nil {
+                                recording.startRecording()
+                                NavigationLink(destination: HomeView()) { }
+                            }
+                            
+                        }
+                            
                     
                 }.onAppear {
                     SwiftSpeech.requestSpeechRecognitionAuthorization()
+                    
+                    
+
                 }
             
         }

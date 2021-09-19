@@ -28,6 +28,79 @@ struct HomeView: View {
     
     let storage = Storage.storage().reference()
     
+    func startRecording() {
+        do {
+            
+            if self.record {
+                Circle().stroke(Color.white, lineWidth: 6).frame(width: 85, height: 85)
+            }
+            
+            if self.record {
+                
+                //recording already in progress
+//                self.recorder?.stop()
+                self.record.toggle()
+                //updating data for each rcd
+                self.getAudios()
+            }
+            
+            
+            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            
+            let date = Date()
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            
+            let fileName = url.appendingPathComponent("myPoliceRcd-\(self.audios.count + 1).m4a")
+            
+            let settings = [
+                
+                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                AVSampleRateKey: 12000,
+                AVNumberOfChannelsKey: 1,
+                AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+                
+            ]
+            
+            self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
+            
+            self.recorder?.record()
+            self.record.toggle()
+            
+            UIScreen.main.wantsSoftwareDimming = true
+            UIScreen.main.brightness = 0
+            
+            
+            let metadata = StorageMetadata()
+            metadata.contentType = "audio/m4a"
+                                        
+            let vidRef = storage.child("recordings").child(email!).child("myPoliceRcd_\(self.audios.count + 1).m4a")
+            do {
+                let audioData = try Data(contentsOf: (recorder?.url ?? URL(string: "https://www.google.com"))!)
+                vidRef.putData(audioData, metadata: metadata) { (data, error) in
+                    if error == nil {
+                        vidRef.downloadURL { url, error in
+                            guard let downloadURL = url else { return }
+                        }
+                    } else {
+                        if let error = error?.localizedDescription {
+                            print(error)
+                        } else {
+                        }
+                    }
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            
+            
+        } catch {
+            print("Error occurred: " + error.localizedDescription)
+        }
+    }
+    
     var body: some View {
         
         NavigationView {
@@ -54,70 +127,8 @@ struct HomeView: View {
                     
                     Button(action: {
                         
-                        do {
-                            
-                            if self.record {
-                                
-                                //recording already in progress
-                                
-                                self.recorder?.stop()
-                                self.record.toggle()
-                                //updating data for each rcd
-                                self.getAudios()
-                                return
-                            }
-                            
-                            
-                            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                            
-                            let date = Date()
-                            
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "MM/dd/yyyy"
-                            
-                            let fileName = url.appendingPathComponent("myPoliceRcd-\(self.audios.count + 1).m4a")
-                            
-                            let settings = [
-                                
-                                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                                AVSampleRateKey: 12000,
-                                AVNumberOfChannelsKey: 1,
-                                AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-                                
-                            ]
-                            
-                            self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
-                            
-                            self.recorder.record()
-                            self.record.toggle()
-                            
-                            let metadata = StorageMetadata()
-                            metadata.contentType = "audio/m4a"
-                                                        
-                            let vidRef = storage.child("recordings").child(email!).child("myPoliceRcd_\(self.audios.count + 1).m4a")
-                            do {
-                                let audioData = try Data(contentsOf: recorder.url)
-                                vidRef.putData(audioData, metadata: metadata) { (data, error) in
-                                    if error == nil {
-                                        vidRef.downloadURL { url, error in
-                                            guard let downloadURL = url else { return }
-                                        }
-                                    } else {
-                                        if let error = error?.localizedDescription {
-                                            print(error)
-                                        } else {
-                                        }
-                                    }
-                                }
-                            } catch {
-                                print(error.localizedDescription)
-                            }
-                            
-                            
-                            
-                        } catch {
-                            print("Error occurred: " + error.localizedDescription)
-                        }
+                        startRecording()
+                        
                     }, label: {
                         
                         ZStack {

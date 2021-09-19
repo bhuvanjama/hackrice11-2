@@ -18,7 +18,7 @@ struct PoliceRecorderApp: App {
             TabView{
                 SpeechRecognitionView()
                     .tabItem{
-                        Label("Speech Shit", systemImage: "square.and.pencil")
+                        Label("Speech", systemImage: "mic")
                     }
                 
                
@@ -26,25 +26,25 @@ struct PoliceRecorderApp: App {
                     //ContentView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .tabItem{
-                        Label("Content", systemImage: "square.and.pencil")
+                        Label("Camera", systemImage: "camera")
                     }
                 
                 HomeView(record: false)
                     .tabItem {
-                        Label("Home", systemImage: "square.and.pencil")
+                        Label("Home", systemImage: "house")
                     }
  
                 LoginView()
                     .tabItem {
-                        Label("Login", systemImage: "square.and.pencil")
+                        Label("Login", systemImage: "lock")
                     }
                 EmergencyContactsView()
                     .tabItem {
-                        Label("ECV", systemImage: "square.and.pencil")
+                        Label("Emergency Contacts", systemImage: "staroflife")
                     }
                 AddEmergencyContactsView()
                     .tabItem {
-                        Label("Add", systemImage: "square.and.pencil")
+                        Label("Add", systemImage: "person.badge.plus")
                     }
             }
             
